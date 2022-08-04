@@ -1,0 +1,44 @@
+---
+title: "Day - 4 - Exploring Data"
+format: html
+editor: visual
+---
+
+## 
+
+```{r}
+#| warning: false
+#| echo: false
+
+# Load Libraries
+library(tidyverse)
+library(palmerpenguins)
+library(skimr)
+library(GGally)
+```
+
+## Exploratory Data Visualization
+
+Check out your data:
+
+```{r}
+#| include: false
+# tell me the column names
+names(penguins)
+
+#What are the dimensions
+dim(penguins)
+
+#show me the first 6 lines
+head(penguins)
+
+#show me the last 6 lines
+tail(penguins)
+
+
+
+```
+
+```{r}
+
+```
