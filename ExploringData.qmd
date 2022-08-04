@@ -50,7 +50,7 @@ Flipper length by species
 
 ```{r}
 #| echo: false
-#| fig.cap: "My awesome fig caption"
+#| fig.cop: "My awesome fig caption"
 
 ggplot(data = penguins, 
        aes(x = species, 
