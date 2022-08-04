@@ -33,8 +33,6 @@ head(penguins)
 #show me the last 6 lines
 tail(penguins)
 
-
-
 ```
 
 ```{r}
@@ -43,7 +41,7 @@ skim(penguins)
 
 ```{r}
 #| warning: false
-GGally::ggpairs(penguins)
+#GGally::ggpairs(penguins)
 ```
 
 ## Jitterplot
@@ -52,14 +50,14 @@ Flipper length by species
 
 ```{r}
 #| echo: false
-#| fig.cao = "My awesome fig caption"
+#| fig.cap: "My awesome fig caption"
 
 ggplot(data = penguins, 
        aes(x = species, 
            y = flipper_length_mm)) + 
   geom_jitter(width = 0.2,
               alpha = 0.7) +
-  geom_boxplot(fill = NA)
+  geom_boxplot(fill = NA) +
   theme_light() +
   scale_color_manual(values = c("green", "blue", "purple")) +
   labs(x = "Penguin Species", y = "Flipper Length (mm)", title = "Penguin Flipper Size")
