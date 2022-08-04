@@ -71,4 +71,3 @@ ggplot(data = penguins, aes(x = bill_length_mm))+
   facet_wrap(~species) +
   theme_light()
 ```
-

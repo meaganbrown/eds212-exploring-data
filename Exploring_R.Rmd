@@ -1,0 +1,41 @@
+---
+title: "r exploring"
+author: "Meagan Brown"
+date: '2022-08-04'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(skimr)
+library(GGally)
+```
+
+
+```{r}
+names(diamonds)
+dim(diamonds)
+summary(diamonds)
+head(diamonds)
+tail(diamonds)
+
+skimr::skim(diamonds)
+
+ggplot(data = diamonds, aes(x = carat, y = price))+
+  geom_jitter(aes(color = color), size = 0.5) +
+  theme_light()
+
+GGally::ggpairs(diamonds)
+
+view(diamonds)
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = carat, color = cut, fill = cut)) +
+  geom_histogram(alpha = 0.5) 
+```
+
