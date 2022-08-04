@@ -4,8 +4,6 @@ format: html
 editor: visual
 ---
 
-## 
-
 ```{r}
 #| warning: false
 #| echo: false
@@ -40,5 +38,37 @@ tail(penguins)
 ```
 
 ```{r}
-
+skim(penguins)
 ```
+
+```{r}
+#| warning: false
+GGally::ggpairs(penguins)
+```
+
+## Jitterplot
+
+Flipper length by species
+
+```{r}
+#| echo: false
+#| fig.cao = "My awesome fig caption"
+
+ggplot(data = penguins, 
+       aes(x = species, 
+           y = flipper_length_mm)) + 
+  geom_jitter(width = 0.2,
+              alpha = 0.7) +
+  geom_boxplot(fill = NA)
+  theme_light() +
+  scale_color_manual(values = c("green", "blue", "purple")) +
+  labs(x = "Penguin Species", y = "Flipper Length (mm)", title = "Penguin Flipper Size")
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm))+
+  geom_histogram(aes(fill = species), color = "grey", size = 0.2) +
+  facet_wrap(~species) +
+  theme_light()
+```
+
